@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CurrentWeather from '../CurrentWeather/CurrentWeather'
 import Forecast from '../Forecast/Forecast'
 import Search from '../Search/Search'
-import { WEATHER_API_URL, WEATHER_API_KEY } from '../../api'
+import { WEATHER_API_URL, WEATHER_API_KEY } from '../../apiCalls'
 import './App.css'
 
 const App = () => {
@@ -12,17 +12,17 @@ const App = () => {
   const handleOnSearchChange = (searchData) => {
     const [latitude, longitude] = searchData.value.split(' ')
 
-    const getCurrentWeather = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`)
+    const getCurrentWeather = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`)
 
-    const getForecast = fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`)
+    const getForecast = fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`)
 
     Promise.all([getCurrentWeather, getForecast])
       .then(async (response) => {
         const weatherResponse = await response[0].json()
         const forecastResponse = await response[1].json()
 
-        setCurrentWeather({city: searchData.label, ...weatherResponse})
-        setForecast({city: searchData.label, ...forecastResponse})
+        setCurrentWeather({ city: searchData.label, ...weatherResponse })
+        setForecast({ city: searchData.label, ...forecastResponse })
       })
       .catch((err) => console.error(err))
   }
@@ -32,8 +32,8 @@ const App = () => {
 
   return (
     <div className='container'>
-      <Search onSearchChange={handleOnSearchChange}/>
-      <CurrentWeather />
+      <Search onSearchChange={handleOnSearchChange} />
+      {currentWeather && <CurrentWeather data={currentWeather} />}
     </div>
   )
 }
