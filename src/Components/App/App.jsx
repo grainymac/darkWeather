@@ -4,6 +4,8 @@ import Forecast from '../Forecast/Forecast'
 import Search from '../Search/Search'
 import { WEATHER_API_URL, WEATHER_API_KEY } from '../../apiCalls'
 import './App.css'
+import hotBackground from '../../assets/hot-background.jpg'
+import coldBackground from '../../assets/cold-background.jpg'
 
 const App = () => {
   const [currentWeather, setCurrentWeather] = useState(null)
@@ -31,10 +33,8 @@ const App = () => {
   console.log(forecast)
 
   return (
-    <div className='container'>
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
+    <div className='app' style={{ backgroundImage: `url(${coldBackground})`}}>
+      
     </div>
   )
 }
