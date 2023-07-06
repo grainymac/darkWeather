@@ -7,7 +7,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getWeatherData()
+      const data = await getWeatherData('paris')
+      console.log(data)
     }
 
     fetchWeatherData()
