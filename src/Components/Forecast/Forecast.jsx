@@ -1,28 +1,12 @@
 import React from 'react'
-import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from 'react-accessible-accordion'
 
-const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-
-const Forecast = ({ data }) => {
+const Forecast = () => {
   return (
-    <>
-      <label className='title'>Daily</label>
-      <Accordion allowZeroExpanded>
-        {data.list.splice(0, 7).map((item, idx) => {
-          <AccordionItem key={idx}>
-            <AccordionItemHeading>
-              <AccordionItemButton>
-                <div className='daily-item'>
-                  <img alt='weather' className='icon-small' src={`icons/${item.weather[0].icon}.png`} />
-                  <label className='day'></label>
-                </div>
-              </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel></AccordionItemPanel>
-          </AccordionItem>
-        })}
-      </Accordion>
-    </>
+    <div className='section section__forecast'>
+      <div className='forecast__card'>
+        <div className='forecast__card-icon'></div>
+      </div>
+    </div>
   )
 }
 

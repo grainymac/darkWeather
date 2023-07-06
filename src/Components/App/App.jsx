@@ -1,40 +1,34 @@
 import React, { useState } from 'react'
-import CurrentWeather from '../CurrentWeather/CurrentWeather'
-import Forecast from '../Forecast/Forecast'
-import Search from '../Search/Search'
-import { WEATHER_API_URL, WEATHER_API_KEY } from '../../apiCalls'
 import './App.css'
 import hotBackground from '../../assets/hot-background.jpg'
 import coldBackground from '../../assets/cold-background.jpg'
 
 const App = () => {
-  const [currentWeather, setCurrentWeather] = useState(null)
-  const [forecast, setForecast] = useState(null)
-
-  const handleOnSearchChange = (searchData) => {
-    const [latitude, longitude] = searchData.value.split(' ')
-
-    const getCurrentWeather = fetch(`${WEATHER_API_URL}/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`)
-
-    const getForecast = fetch(`${WEATHER_API_URL}/forecast?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}&units=metric`)
-
-    Promise.all([getCurrentWeather, getForecast])
-      .then(async (response) => {
-        const weatherResponse = await response[0].json()
-        const forecastResponse = await response[1].json()
-
-        setCurrentWeather({ city: searchData.label, ...weatherResponse })
-        setForecast({ city: searchData.label, ...forecastResponse })
-      })
-      .catch((err) => console.error(err))
-  }
-
-  console.log(currentWeather)
-  console.log(forecast)
 
   return (
     <div className='app' style={{ backgroundImage: `url(${coldBackground})`}}>
-      
+      <div className="overlay">
+        <div className="container">
+          <div className="section section__input">
+            <input type='text' name='city' placeholder='Enter City...' />
+            <button>°F</button>
+          </div>
+
+          <div className='section section__temperature'>
+            <div className='weather-icon'>
+              <h3>CITY</h3>
+              <img src='' alt='weather icon' />
+              <h3>WEATHER</h3>
+            </div>
+            <div className='temperature'>
+              <h1>00°</h1>
+            </div>
+          </div>
+
+          {/* botton description */}
+          <Forecast />
+        </div>
+      </div>
     </div>
   )
 }
