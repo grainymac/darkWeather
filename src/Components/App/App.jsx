@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import hotBackground from '../../assets/hot-background.jpg'
 import coldBackground from '../../assets/cold-background.jpg'
 
 const App = () => {
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      const data = await getWeatherData()
+    }
+
+    fetchWeatherData()
+  }, [])
 
   return (
     <div className='app' style={{ backgroundImage: `url(${coldBackground})`}}>
@@ -25,7 +33,6 @@ const App = () => {
             </div>
           </div>
 
-          {/* botton description */}
           <Forecast />
         </div>
       </div>
