@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
-import hotBackground from ''
-import coldBackground from ''
-import Forecast from '../Forecast/Forecast'
+import hotBackground from '../../assets/hot-background.jpg'
+import coldBackground from '../../assets/cold-background.jpg'
 
 const App = () => {
 
