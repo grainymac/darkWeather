@@ -1,6 +1,8 @@
 //weather services
 const API_key = '3448f48b958ddb737240a98bf3344fe'
 
+const makeIconURL = (iconId) => `https://openweathermap.org/img/wn/${iconId}@2x.png`
+
 const getWeatherData = async (city, units='metric') => {
 	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=${units}`
 
@@ -21,7 +23,7 @@ const getWeatherData = async (city, units='metric') => {
 
 	return {
 		forecast, 
-		icon, 
+		iconURL: makeIconURL(icon), 
 		temp, 
 		feels_like, 
 		temp_min, 

@@ -5,37 +5,44 @@ import coldBackground from '../../assets/cold-background.jpg'
 
 const App = () => {
 
+  const [weather, setWeather] = useState(null)
+  const [units, setUnits] = useState('metric')
+
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getWeatherData('paris')
-      console.log(data)
+      const data = await getWeatherData('paris', units)
+      setWeather(data)
     }
 
     fetchWeatherData()
   }, [])
 
   return (
-    <div className='app' style={{ backgroundImage: `url(${coldBackground})`}}>
+    <div className='app' style={{ backgroundImage: `url(${coldBackground})` }}>
       <div className="overlay">
-        <div className="container">
-          <div className="section section__input">
-            <input type='text' name='city' placeholder='Enter City...' />
-            <button>°F</button>
-          </div>
+        {
+          weather && (
+            <div className="container">
+              <div className="section section__input">
+                <input type='text' name='city' placeholder='Enter City...' />
+                <button>°F</button>
+              </div>
 
-          <div className='section section__temperature'>
-            <div className='weather-icon'>
-              <h3>CITY</h3>
-              <img src='' alt='weather icon' />
-              <h3>WEATHER</h3>
-            </div>
-            <div className='temperature'>
-              <h1>00°</h1>
-            </div>
-          </div>
+              <div className='section section__temperature'>
+                <div className='weather-icon'>
+                  <h3>{`${weather.name}, ${weather.country}`}</h3>
+                  <img src={weather.iconURL} alt='weather icon' />
+                  <h3>{weather.forecast}</h3>
+                </div>
+                <div className='temperature'>
+                  <h1>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'}`}</h1>
+                </div>
+              </div>
 
-          <Forecast />
-        </div>
+              <Forecast weather={weather} units={units} />
+            </div>
+          )
+        }
       </div>
     </div>
   )
