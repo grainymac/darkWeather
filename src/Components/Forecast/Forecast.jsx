@@ -59,10 +59,10 @@ const Forecast = ({ weather, units }) => {
       {cards.map(({ id, icon, title, data, unit}) => (
         <div key={id} className='forecast__card'>
           <div className='forecast__card-icon'>
-            <FaArrowDown />
-            <small>min</small>
+            {icon}
+            <small>{title}</small>
           </div>
-          <h2>0°C</h2>
+          <h2>{`${data} ${unit}`}</h2>
         </div>
       ))}
     </div>
