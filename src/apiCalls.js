@@ -1,5 +1,4 @@
-//weather services
-const API_key = '3448f48b958ddb737240a98bf3344fe'
+const API_key = '23448f48b958ddb737240a98bf3344fe'
 
 const makeIconURL = (iconId) => `https://openweathermap.org/img/wn/${iconId}@2x.png`
 
@@ -8,8 +7,7 @@ const getWeatherData = async (city, units='metric') => {
 
 	const data = await fetch(url)
 		.then((response) => response.json())
-		.then((data) => console.log(data))
-		.catch((err) => console.error(err))
+		.then((data) => data)
 
 	const {
 		weather, 
@@ -19,10 +17,10 @@ const getWeatherData = async (city, units='metric') => {
 		name,
 	} = data
 
-	const { forecast, icon } = weather[0]
+	const { description, icon } = weather[0]
 
 	return {
-		forecast, 
+		description, 
 		iconURL: makeIconURL(icon), 
 		temp, 
 		feels_like, 
@@ -35,6 +33,8 @@ const getWeatherData = async (city, units='metric') => {
 		name
 	}
 }
+
+export { getWeatherData }
 
 
 // export const geoApiOptions = {

@@ -2,7 +2,7 @@ import React from 'react'
 import { FaArrowDown, FaArrowUp, FaWind } from 'react-icons/fa'
 import { BiHappy } from 'react-icons/bi'
 import { MdCompress, MdOutlineWaterDrop } from 'react-icons/md'
-import '/Forecast.css'
+import './Forecast.css'
 
 const Forecast = ({ weather, units }) => {
 

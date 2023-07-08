@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import hotBackground from '../../assets/hot-background.jpg'
 import coldBackground from '../../assets/cold-background.jpg'
+import { getWeatherData } from '../../apiCalls'
+import Forecast from '../Forecast/Forecast'
 
 const App = () => {
 
