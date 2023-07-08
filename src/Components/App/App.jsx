@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import hotBackground from '../../assets/hot-background.jpg'
-import coldBackground from '../../assets/cold-background.jpg'
+// import hotBackground from '../../assets/hot-background.jpg'
+// import coldBackground from '../../assets/cold-background.jpg'
 import { getWeatherData } from '../../apiCalls'
 import Forecast from '../Forecast/Forecast'
 
 const App = () => {
 
-  const [city, setCity] = useState('Paris')
+  const [city, setCity] = useState('Fort Worth')
   const [weather, setWeather] = useState(null)
   const [units, setUnits] = useState('metric')
-  const [background, setBackground] = useState(hotBackground)
+  // const [background, setBackground] = useState(hotBackground)
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       const data = await getWeatherData(city, units)
       setWeather(data)
 
-      const threshold = units === 'metric' ? 20 : 60
-      if (data.temp <= threshold) setBackground(coldBackground)
-      else setBackground(hotBackground)
+      // const threshold = units === 'metric' ? 20 : 60
+      // if (data.temp <= threshold) setBackground(coldBackground)
+      // else setBackground(hotBackground)
     }
 
     fetchWeatherData()
@@ -42,19 +42,19 @@ const App = () => {
   }
 
   return (
-    <div className='app' style={{ backgroundImage: `url(${coldBackground})` }}>
+    <div className='app'>
       <div className="overlay">
         {
           weather && (
             <div className="container">
-              <div className="section section__input">
+              <div className="section section__inputs">
                 <input onKeyDown={handleKeyPress} type='text' name='city' placeholder='Enter City...' />
                 <button onClick={(e) => handleUnitsClick(e)}>°F</button>
               </div>
 
               <div className='section section__temperature'>
                 <div className='weather-icon'>
-                  <h3>{`${weather.name}, ${weather.country}`}</h3>
+                  <h3 className='weather-city'>{`${weather.name}, ${weather.country}`}</h3>
                   <img src={weather.iconURL} alt='weather icon' />
                   <h3>{weather.forecast}</h3>
                 </div>
