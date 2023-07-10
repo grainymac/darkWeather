@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-// import hotBackground from '../../assets/hot-background.jpg'
-// import coldBackground from '../../assets/cold-background.jpg'
 import { getWeatherData } from '../../apiCalls'
 import Forecast from '../Forecast/Forecast'
 
@@ -10,16 +8,18 @@ const App = () => {
   const [city, setCity] = useState('Fort Worth')
   const [weather, setWeather] = useState(null)
   const [units, setUnits] = useState('metric')
-  // const [background, setBackground] = useState(hotBackground)
+  const [error, setError] = userState(null)
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getWeatherData(city, units)
-      setWeather(data)
-
-      // const threshold = units === 'metric' ? 20 : 60
-      // if (data.temp <= threshold) setBackground(coldBackground)
-      // else setBackground(hotBackground)
+      try {
+        const data = await getWeatherData(city, units)
+        setWeather(data)
+        setError(null)
+      } catch (error) {
+        setWeather(null)
+        setError('City not found')
+      }
     }
 
     fetchWeatherData()
@@ -44,7 +44,9 @@ const App = () => {
   return (
     <div className='app'>
       <div className="overlay">
-        {
+        {error ? (
+          <div className='error-message'>{error}</div>
+        ) : (
           weather && (
             <div className="container">
               <div className="section section__inputs">
@@ -66,7 +68,7 @@ const App = () => {
               <Forecast weather={weather} units={units} />
             </div>
           )
-        }
+        )}
       </div>
     </div>
   )
