@@ -69,7 +69,7 @@ const Forecast = ({ weather, units }) => {
             <img className='forecast-icon' src={icon} alt='forecast icon' />
             <small className='card-title'>{title}</small>
           </div>
-          <h2>{`${data} ${unit}`}</h2>
+          <h2 className='card-data'>{`${data} ${unit}`}</h2>
         </div>
       ))}
     </div>
