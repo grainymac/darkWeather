@@ -59,7 +59,7 @@ const App = () => {
                   <h3>{weather.forecast}</h3>
                 </div>
                 <div className='temperature'>
-                  <h1>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'}`}</h1>
+                  <h1 className='weather-temp'>{`${weather.temp.toFixed()}°${units === 'metric' ? 'C' : 'F'}`}</h1>
                 </div>
               </div>
 
