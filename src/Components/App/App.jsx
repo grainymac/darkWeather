@@ -8,7 +8,7 @@ const App = () => {
   const [city, setCity] = useState('Fort Worth')
   const [weather, setWeather] = useState(null)
   const [units, setUnits] = useState('metric')
-  const [error, setError] = userState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchWeatherData = async () => {
