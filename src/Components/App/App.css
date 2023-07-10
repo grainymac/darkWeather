@@ -30,3 +30,18 @@
 .weather-city {
   font-size: 4rem;
 }
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-title {
+  font-size: 6rem;
+}
+
+.error-message {
+  font-size: 4rem;
+}

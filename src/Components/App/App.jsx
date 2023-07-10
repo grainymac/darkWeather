@@ -45,7 +45,11 @@ const App = () => {
     <div className='app'>
       <div className="overlay">
         {error ? (
-          <div className='error-message'>{error}</div>
+          <div className='error-container'>
+            <h1 className='error-title'>{error}</h1>
+            <p className='error-message'>Click button to go back home</p>
+            <button className='error-button'>Home</button>
+          </div>
         ) : (
           weather && (
             <div className="container">
