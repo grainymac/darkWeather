@@ -34,6 +34,11 @@
 .forecast__card-icon>small {
     text-transform: capitalize;
 }
+
+.card-title {
+    font-size: 2rem;
+}
+
 @media screen and (max-width: 1024px) {
     .section__forecast {
         grid-template-columns: 1fr 1fr;
