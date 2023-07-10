@@ -26,10 +26,3 @@
 	transform: translatey(0px);
 	animation: float 6s ease-in-out infinite;
 }
-
-
-@media screen and (max-width: 1024px) {
-  .weather-temp {
-      font-size: 40px;
-  }
-}
