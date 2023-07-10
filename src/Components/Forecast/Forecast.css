@@ -36,11 +36,11 @@
 }
 
 .card-title {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .card-data {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 1024px) {
