@@ -17,7 +17,7 @@
 
 .city {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 28px;
     line-height: 1;
     margin: 0;
     letter-spacing: 1px;
@@ -25,7 +25,7 @@
 
 .weather-description {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1;
     margin: 0;
 }
@@ -36,7 +36,7 @@
 
 .temperature {
     font-weight: 600;
-    font-size: 70px;
+    font-size: 80px;
     width: auto;
     letter-spacing: -5px;
     margin: 10px 0;
