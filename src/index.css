@@ -2,23 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dosis:wght@200&family=Outfit:wght@100&family=Righteous&display=swap');
 
 @keyframes float {
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-20px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-10px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(5px);
+    }
+
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
 }
 
 :root {
-  --section-overlay: rgba(0,0,0, 0.7);
-  --background-overlay: rgba(0,0,0, 0.2);
+  --section-overlay: rgba(0, 0, 0, 0.7);
+  --background-overlay: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -32,7 +53,7 @@
 .app {
   width: 100%;
   height: 100vh;
-  background-color: rgb(136, 136, 136);
+  background-color: #6E6E6E;
 }
 
 .overlay {
@@ -57,7 +78,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 2rem;
-  color: #fff;
+  color: #F9F5FF;
 }
 
 .section__inputs,
@@ -72,7 +93,7 @@
   border: none;
   border-radius: 1rem;
   background-color: transparent;
-  color: #fff;
+  color: #F9F5FF;
   padding: 0.5rem;
   font-size: 30px;
   font-weight: 200;
@@ -88,7 +109,7 @@
   border-radius: 2rem;
   font-size: 30px;
   font-weight: 500;
-  background-color: #fff;
+  background-color: #F9F5FF;
 }
 
 .section__inputs>button:hover {
@@ -116,6 +137,6 @@
 
 @media screen and (max-width: 480px) {
   .temperature>h1 {
-      font-size: 60px;
+    font-size: 60px;
   }
 }

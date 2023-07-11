@@ -12,7 +12,6 @@
   padding: 15px;
   width: 80%;
   margin: auto;
-  /* border: 1px solid lightgray; */
   border-radius: 2rem;
   font-size: 26px;
 }
@@ -29,6 +28,7 @@
 
 .weather-city {
   font-size: 4rem;
+  color: #F7B05B;
 }
 
 .error-container {

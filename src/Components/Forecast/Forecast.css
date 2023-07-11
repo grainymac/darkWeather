@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
 }
 
 .forecast__card {
@@ -14,7 +17,8 @@
     border-radius: 2rem;
     box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 	transform: translatey(0px);
-	animation: float 6s ease-in-out infinite;
+	animation: float 4s ease-in-out infinite;
+    margin: 0;
 }
 
 .forecast__card-icon {
@@ -36,11 +40,12 @@
 }
 
 .card-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    color: #F7B05B;
 }
 
 .card-data {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width: 1024px) {

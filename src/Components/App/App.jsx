@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import { getWeatherData } from '../../apiCalls'
 import Forecast from '../Forecast/Forecast'
+import Footer from '../Footer/Footer'
 
 const App = () => {
 
@@ -70,6 +71,7 @@ const App = () => {
               </div>
 
               <Forecast weather={weather} units={units} />
+              <Footer />
             </div>
           )
         )}
