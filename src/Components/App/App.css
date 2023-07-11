@@ -46,6 +46,20 @@
   font-size: 4rem;
 }
 
+.error-button {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 2rem;
+  font-size: 30px;
+  font-weight: 500;
+  background-color: #F9F5FF;
+}
+
+.error-button:hover {
+  cursor: pointer;
+  background-color: #808080;
+}
+
 @media screen and (max-width: 480px) {
   .weather-city {
     font-size: 3rem;
