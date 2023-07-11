@@ -82,7 +82,7 @@ const App = () => {
           )}
         </div>
       </div>
-      <Loader type='ball-scale-ripple-multiple' />
+      <Loader type='ball-clip-rotate-multiple' />
     </>
   )
 }
