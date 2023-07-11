@@ -48,9 +48,6 @@ const App = () => {
 
   return (
     <>
-      <Routes>
-        <Route path='/*' element={<BadURL />} />
-      </Routes>
       <div className='app'>
         <div className="overlay">
           {error ? (
