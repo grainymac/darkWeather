@@ -1,11 +1,8 @@
 @import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
 
-.loader-hidden {
-  display: none;
-}
-
-.loader-active {
-  display: block;
+.loader-small,
+.loader-inner {
+  transform: scale(0.5, 0.5);
 }
 
 .container {
