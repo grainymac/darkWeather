@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './App.css'
+import './App.scss'
 import { getWeatherData } from '../../apiCalls'
 import Forecast from '../Forecast/Forecast'
 import Footer from '../Footer/Footer'
-import { Routes, Route } from 'react-router-dom'
-import BadURL from '../BadURL/BadURL'
 import { Loader } from 'react-loaders'
 
 const App = () => {
