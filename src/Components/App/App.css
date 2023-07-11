@@ -45,3 +45,9 @@
 .error-message {
   font-size: 4rem;
 }
+
+@media screen and (max-width: 480px) {
+  .weather-city {
+    font-size: 3rem;
+  }
+}
