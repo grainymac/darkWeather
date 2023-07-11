@@ -5,6 +5,7 @@ import Forecast from '../Forecast/Forecast'
 import Footer from '../Footer/Footer'
 import { Routes, Route } from 'react-router-dom'
 import BadURL from '../BadURL/BadURL'
+import { Loader } from 'react-loaders'
 
 const App = () => {
 
@@ -84,6 +85,7 @@ const App = () => {
           )}
         </div>
       </div>
+      <Loader type='ball-scale-ripple-multiple' />
     </>
   )
 }
