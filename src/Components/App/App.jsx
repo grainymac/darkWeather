@@ -3,7 +3,7 @@ import './App.scss'
 import { getWeatherData } from '../../apiCalls'
 import Forecast from '../Forecast/Forecast'
 import Footer from '../Footer/Footer'
-import { Loader } from 'react-loaders'
+import Loader from 'react-loaders'
 
 const App = () => {
 
